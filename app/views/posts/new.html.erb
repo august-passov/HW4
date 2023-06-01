@@ -8,9 +8,10 @@
       <%= form.text_field "title", class: "form-control" %>
     </div>
 
+  
   <div class="mb-3">
       <%= form.label "description", class: "form-label" %>
-      <%= form.text_field "description", class: "form-control" %>
+      <%= form.text_field "description", :accept => "image/png,image/jpg,image/jpeg,image/gif", :class => "form-control" %>
     </div>
 
   <div class="mb-3">
