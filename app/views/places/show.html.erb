@@ -10,7 +10,7 @@
         <% if user %>
           <%= user["username"] %>
         <% else %>
-          <p> Anonymous </p>
+          Anonymous
         <% end %>
       </h4>
       <% user = User.find_by({ "id" => post["user_id"] }) %>
@@ -19,7 +19,7 @@
           <p><%= post["posted_on"] %></p>
           <p><%= post["description"] %></p>
         <% else %>
-          <p> Anonymous </p>
+          Anonymous
         <% end %>
     </div>
   <% end %>
