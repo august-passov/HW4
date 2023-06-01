@@ -10,14 +10,18 @@
         <% if user %>
           <%= user["username"] %>
         <% else %>
-          anonymous
+          <p> Anonymous </p>
         <% end %>
-    </h4>
-      <p><%= post["title"] %></p>
-      <p><%= post["posted_on"] %></p>
-      <p><%= post["description"] %></p>
+      </h4>
+      <% user = User.find_by({ "id" => post["user_id"] }) %>
+        <% if user %>
+          <p><%= post["title"] %></p>
+          <p><%= post["posted_on"] %></p>
+          <p><%= post["description"] %></p>
+        <% else %>
+          <p> Anonymous </p>
+        <% end %>
     </div>
-
   <% end %>
 </div>
 
@@ -28,7 +32,6 @@
 <% else %>
   <p> Login Please </p>
 <% end %>
-  
         <div class ="mb-2 ">
   <a href="/places" class= "btn btn-primary"> Back to Places</a>
   </div>
