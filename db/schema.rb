@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_195452) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.string "image"
+    t.string "uploaded_image"
     t.text "description"
     t.date "posted_on"
     t.integer "place_id"
