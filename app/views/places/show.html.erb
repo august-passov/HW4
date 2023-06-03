@@ -10,15 +10,14 @@
   <% for post in @posts %>
     <div class="col-md-4 col-sm-12">
       <h4>
+        <!-- talked to Anthony, this is ok to hide posts -->
         <% user = User.find_by({ "id" => post["user_id"] }) %>
-        <% if user %>
+        <% if @current_user == user %>
           <%= user["username"] %>
-        <% else %>
-          Anonymous
         <% end %>
       </h4>
       <% user = User.find_by({ "id" => post["user_id"] }) %>
-        <% if user %>
+        <% if @current_user == user %>
           <p><%= post["title"] %></p>
           <p><%= post["posted_on"] %></p>
           <p><%= post["description"] %></p>
@@ -27,18 +26,16 @@
           <% else %>
             <img src="<%= post["image"] %>" class="img-fluid">
           <% end %>
-        <% else %>
-          Anonymous
+          
         <% end %>
     </div>
   <% end %>
 </div>
 
-
 <% else %>
   <p> Login Please </p>
 <% end %>
-        <div class ="mb-2">
+  <div class ="mb-2">
   <a href="/places" class= "btn btn-primary" > Back to Places</a>
   </div>
 </div>
